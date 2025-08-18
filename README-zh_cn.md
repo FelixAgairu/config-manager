@@ -33,3 +33,5 @@ public class Test() {
 	private static final JsonObject configs = configManager.loadConfig();
 }
 ```
+
+[FelixAgairu](https://github.com/FelixAgairu) 的作品 [icon.png](https://github.com/FelixAgairu/config-manager/blob/4fd8f18df3d7a1828d7902e03d3bc05898de4553/src/main/resources/assets/config-manager/icon.png) © 2025 通过 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议授权

@@ -1,25 +1,24 @@
 {
 	"schemaVersion": 1,
-	"id": "config-manager",
+	"id": "${id}",
 	"version": "${version}",
-	"name": "config-manager",
-	"description": "A small json configuration serializer using gson.",
+	"name": "${name}",
+	"description": "${description}",
 	"authors": [
-		"Github::FelixAgairu"
+		"FelixAgairu"
 	],
 	"contact": {
 		"sources": "https://github.com/FelixAgairu/config-manager"
 	},
-	"license": "MIT",
+	"license": "MPL2.0",
 	"icon": "assets/config-manager/icon.png",
 	"environment": "*",
 	"entrypoints": {"main": []},
 	"mixins": [],
 	"depends": {
-		"fabricloader": ">=0.16.13",
-		"minecraft": "~1.21.1",
-		"java": ">=21",
-		"fabric-api": "*"
+		"fabricloader": "${fabricLoaderVersion}",
+		"minecraft": ">=${minecraftVersion}",
+		"fabric-api": ">=${fabricVersion}"
 	},
 	"suggests": {}
 }

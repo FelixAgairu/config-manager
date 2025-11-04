@@ -25,7 +25,7 @@ dependencies {
 ```
 - Java
 ```java
-import dev.felixagairu.configmanager.ConfigManager
+import dev.felixagairu.configmanager.ConfigManager;
 
 public class Test() {
 	private static final String defaultConfigs ="{'key':'value'}";
@@ -34,5 +34,9 @@ public class Test() {
 }
 ```
 
+## Licenses
+This library is released under the [MPL-2.0](LICENSE).
 
-[icon.png](https://github.com/FelixAgairu/config-manager/blob/4fd8f18df3d7a1828d7902e03d3bc05898de4553/src/main/resources/assets/config-manager/icon.png) © 2025 by [FelixAgairu](https://github.com/FelixAgairu) is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+Partial parts of the project are based on [gson](https://github.com/google/gson) under [Apache-2.0](https://github.com/google/gson/blob/main/LICENSE).
+
+[icon.png](https://github.com/FelixAgairu/config-manager/blob/4fd8f18df3d7a1828d7902e03d3bc05898de4553/src/main/resources/assets/config-manager/icon.png) © 2025 by [FelixAgairu](https://github.com/FelixAgairu) is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).

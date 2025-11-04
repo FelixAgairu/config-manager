@@ -9,9 +9,19 @@ package dev.felixagairu.configmanager;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import net.fabricmc.loader.api.FabricLoader;
 
 import java.io.*;
+
+import dev.felixagairu.configmanager.exceptions.*;
+
+/*? if fabric {*/
+import net.fabricmc.loader.api.FabricLoader;
+/*?}*/
+
+/*? if forge || neoforge {*/
+/*import net./^? forge {^/ /^minecraftforge ^//^?} else if neoforge {^/ neoforged /^?}^/.fml.loading.FMLPaths;
+import java.nio.file.Path;
+*//*?}*/
 
 public class ConfigManager {
     private final Gson GSON = new Gson();
@@ -19,12 +29,25 @@ public class ConfigManager {
     private final JsonObject DEFAULT_CONFIGS;
 
     public ConfigManager(String configFileName, String configDefault) {
-        // Load file dir from given "configFileName"
-        // 从"configFileName"获取配置文件路径
-        CONFIG_FILE = new File(FabricLoader.getInstance().getConfigDir().toFile(), configFileName);
         // Set the default config content
         // 设置默认配置文件内容
+        /*? if <1.19 {*/
+        /*DEFAULT_CONFIGS = new JsonParser().parse(configDefault).getAsJsonObject();
+        *///?} else {
         DEFAULT_CONFIGS = JsonParser.parseString(configDefault).getAsJsonObject();
+        /*?}*/
+
+        // Load file dir from given "configFileName"
+        // 从"configFileName"获取配置文件路径
+
+        /*? if fabric {*/
+        CONFIG_FILE = new File(FabricLoader.getInstance().getConfigDir().toFile(), configFileName);
+        /*?}*/
+
+        /*? if forge || neoforge {*/
+        /*Path configPath = FMLPaths.CONFIGDIR.get();
+        CONFIG_FILE = configPath.resolve(configFileName).toFile();
+        *//*?}*/
     }
 
     public JsonObject loadConfig() {
@@ -35,12 +58,10 @@ public class ConfigManager {
             if (jO != null) {
                 return jO;
             } else {
-                System.err.println("[config-manager] Failed to load config: Might empty file!");
-                return DEFAULT_CONFIGS;
+                throw new FileHandleException("Empty config file");
             }
         } catch (IOException e) {
-            System.err.println("[config-manager] Failed to load config: " + e.getMessage());
-            return DEFAULT_CONFIGS;
+            throw new FileHandleException("Failed to load config" + e.getMessage());
         }
     }
 
@@ -51,8 +72,7 @@ public class ConfigManager {
             GSON.toJson(config, writer);
             return true;
         } catch (IOException e) {
-            System.err.println("[config-manager] Failed to save config: " + e.getMessage());
-            return false;
+            throw new FileHandleException("Failed to save config" + e.getMessage());
         }
     }
 

@@ -60,8 +60,16 @@ public class ConfigManager {
             } else {
                 throw new FileHandleException("Empty config file");
             }
+        } catch (FileNotFoundException e) {
+            // Reset the config file
+            // 重置配置文件
+            if (resetConfig()) {
+                return loadConfig();
+            } else {
+                throw new FileHandleException("Failed to reset config: " + e.getMessage());
+            }
         } catch (IOException e) {
-            throw new FileHandleException("Failed to load config" + e.getMessage());
+            throw new FileHandleException("Failed to load config: " + e.getMessage());
         }
     }
 
@@ -72,20 +80,12 @@ public class ConfigManager {
             GSON.toJson(config, writer);
             return true;
         } catch (IOException e) {
-            throw new FileHandleException("Failed to save config" + e.getMessage());
+            throw new FileHandleException("Failed to save config: " + e.getMessage());
         }
     }
 
     public boolean resetConfig() {
         return saveConfig(DEFAULT_CONFIGS);
     }
-    /*
-    public static void registerShutdownHandler() {
-        ServerLifecycleEvents.SERVER_STOPPING.register(server -> {
-            // Save your configuration file here
-            saveConfig();
-        });
-    }
- */
 }
 

@@ -41,4 +41,4 @@ stonecutter {
     create(rootProject)
 }
 
-rootProject.name = "Config Manager"
+rootProject.name = "Tiny Config Manager Lib"

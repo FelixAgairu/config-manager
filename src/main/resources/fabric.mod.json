@@ -16,9 +16,9 @@
 	"entrypoints": {"main": []},
 	"mixins": [],
 	"depends": {
-		"fabricloader": "${fabricLoaderVersion}",
-		"minecraft": ">=${minecraftVersion}",
-		"fabric-api": ">=${fabricVersion}"
+        "minecraft": ">=${minecraftVersion}",
+        "fabricloader": "${fabricLoaderVersion}",
+        "fabric-api": ">=${fabricVersion}"
 	},
 	"suggests": {}
 }

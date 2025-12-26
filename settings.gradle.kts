@@ -21,7 +21,7 @@ stonecutter {
     shared {
         fun mc(version: String, vararg loaders: String) {
             // Version directories "1.20.2-fabric", "1.20.2-forge", etc.
-            for (it in loaders) vers("$version-$it", version)
+            for (it in loaders) version("$version-$it", version)
         }
 
         // Forge Ages

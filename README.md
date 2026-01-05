@@ -1,4 +1,9 @@
 **[English](/README.md)** [简体中文](README-zh_cn.md)
+
+Get it from:
+
+![Modrinth Downloads](https://img.shields.io/modrinth/dt/config-manager?logo=modrinth&label=Downloads)
+
 # Config Manager
 A serializer using GSON and load/save config files.
 

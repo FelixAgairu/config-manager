@@ -1,4 +1,9 @@
 [English](/README.md) **[简体中文](README-zh_cn.md)**
+
+获取方式：
+
+![Modrinth Downloads](https://img.shields.io/modrinth/dt/config-manager?logo=modrinth&label=%E4%B8%8B%E8%BD%BD%E9%87%8F)
+
 # 设置管理器
 基于GSON的配置文件序列化器。
 

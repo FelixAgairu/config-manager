@@ -2,7 +2,8 @@
 
 Get it from:
 
-![Modrinth Downloads](https://img.shields.io/modrinth/dt/config-manager?logo=modrinth&label=Downloads)
+![Modrinth Downloads](https://img.shields.io/modrinth/dt/config-manager?logo=modrinth&label=Downloads%20%E4%B8%8B%E8%BD%BD%E9%87%8F&link=https%3A%2F%2Fmodrinth.com%2Fmod%2Fconfig-manager)
+
 
 # Config Manager
 A serializer using GSON and load/save config files.

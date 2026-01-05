@@ -26,12 +26,12 @@ stonecutter {
 
         // Forge Ages
         // 1.16.5 - 1.17.1
-        mc("1.17.1", "forge")
+        mc("1.16.5", "forge")
         // 1.18   - 1.18.2
-        mc("1.18.2", "forge", "fabric")
+        mc("1.18", "forge", "fabric")
         // GSON Changes
         // 1.19   - 1.20.4
-        mc("1.20.4", "forge", "fabric")
+        mc("1.19", "forge", "fabric")
         // No Forge 1.20.5
         // 1.20.5 - 1.20.5
         mc("1.20.5",  "fabric")
@@ -40,11 +40,11 @@ stonecutter {
         mc("1.20.6", "forge", "fabric", "neoforge")
         // No More Forge Support
         // 1.21 - 1.21.10
-        mc("1.21.10", "fabric", "neoforge")
+        mc("1.21.1", "fabric", "neoforge")
         // 1.21.11
         mc("1.21.11", "fabric", "neoforge")
 
-        vcsVersion = "1.21.10-fabric"
+        vcsVersion = "1.21.1-fabric"
     }
     create(rootProject)
 }

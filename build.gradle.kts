@@ -19,7 +19,8 @@ publishMods {
 
 modSettings {
     variableReplacements = mapOf(
-        "fabricLoaderVersion" to mod.prop("fabricLoaderVersion", ">=0.18.4")
+        "fabricLoaderVersion" to mod.prop("loader_version"),
+        "minecraftVersionRange" to mod.prop("additional_versions").split(",").joinToString(prefix = "[", postfix = "]") { "\"$it\"" }
     )
 }
 

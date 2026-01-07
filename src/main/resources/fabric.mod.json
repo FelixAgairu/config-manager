@@ -5,12 +5,12 @@
 	"name": "${name}",
 	"description": "${description}",
 	"authors": [
-		"FelixAgairu"
+		"${authors}"
 	],
 	"contact": {
 		"sources": "https://github.com/FelixAgairu/config-manager"
 	},
-	"license": "MPL2.0",
+	"license": "${license}",
 	"icon": "assets/config-manager/icon.png",
 	"environment": "*",
 	"entrypoints": {"main": []},

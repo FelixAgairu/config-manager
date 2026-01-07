@@ -5,6 +5,19 @@ plugins {
     id("gg.meza.stonecraft")
 }
 
+fun toJsonOrSingle(input: String): String {
+    val trimmed = input.trim()
+
+    return if ("," in trimmed) {
+        trimmed.split(",")
+            .map { it.trim() }
+            .filter { it.isNotEmpty() }
+            .joinToString(prefix = "[", postfix = "]") { "\"$it\"" }
+    } else {
+        "\"$trimmed\""
+    }
+}
+
 // configure the maven publication
 publishMods {
     dryRun = false
@@ -19,8 +32,11 @@ publishMods {
 
 modSettings {
     variableReplacements = mapOf(
+        "license" to mod.prop("mod.license"),
+        "authors" to mod.prop("mod.authors"),
+        "forgeLoaderVersion" to mod.prop("forge_loader"),
         "fabricLoaderVersion" to mod.prop("loader_version"),
-        "minecraftVersionRange" to mod.prop("additional_versions").split(",").joinToString(prefix = "[", postfix = "]") { "\"$it\"" }
+        "minecraftVersionRange" to toJsonOrSingle(mod.prop("additional_versions"))
     )
 }
 

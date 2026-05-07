@@ -17,7 +17,7 @@
 	"mixins": [],
 	"depends": {
         "minecraft": ${minecraftVersionRange},
-        "fabricloader": "${fabricLoaderVersion}",
+        "fabricloader": ">=${fabricLoaderVersion}",
         "fabric-api": ">=${fabricVersion}"
 	},
 	"suggests": {}
